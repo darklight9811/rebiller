@@ -1,11 +1,11 @@
 // Packages
-import styled from "styled-components";
+import styled from "styled-components"
 
 // Utils
-import { shadeColor } from "../../utils/functions/color";
+import { shadeColor } from "utils/functions/color"
 
 // Component
-import Props from "./props";
+import Props from "./props"
 
 const Button = styled.button<Props>`
 	border: transparent 0px;
@@ -21,6 +21,6 @@ const Button = styled.button<Props>`
 
 		background-color: ${({ theme, color }) => shadeColor(theme.colors[color || "main"], 40)};
 	}
-`;
+`
 
-export default Button;
+export default Button

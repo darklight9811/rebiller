@@ -1,13 +1,13 @@
 // Packages
-import { Form } from "formalization";
+import { Form } from "formalization"
 
 // Components
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Text from "../../components/Text";
+import Button from "components/Button"
+import Input from "components/Input"
+import Text from "components/Text"
 
 // Services
-import billService from "../../models/config";
+import billService from "services/bill"
 
 export default function BillAdd () {
 	// -------------------------------------------------
@@ -19,6 +19,7 @@ export default function BillAdd () {
 			<Input name="label" label="Name" required placeholder="ex: Internet bill" />
 			<Input name="date_expire" label="Date it expires" required type="date" />
 			<Input name="fine_percentage" label="Fine percentage per day" required type="number" />
+			<Input name="base_value" label="Bill price" required type="number" />
 			<Text name="description" label="Description" />
 
 			<Button>Add</Button>

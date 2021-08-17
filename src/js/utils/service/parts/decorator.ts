@@ -1,11 +1,14 @@
 // Interfaces
-import { RematchStore } from "@rematch/core";
-import { ServiceInterface } from "../types";
+import { RematchStore } from "@rematch/core"
+import { ModelsInterface } from "services"
 
-export default function ServiceInitializerDecorator (store: RematchStore, model?: string): ClassDecorator {
+// Models
+import { ServiceInterface } from "../types"
+
+export default function ServiceInitializerDecorator (store: RematchStore<ModelsInterface>, model?: string): ClassDecorator {
 	return function (target) {
-		const classModel = target as unknown as ServiceInterface;
-		classModel.$store = store;
-		classModel.$model = model;
+		const classModel = target as unknown as ServiceInterface
+		classModel.$store = store
+		classModel.$model = model
 	}
 }

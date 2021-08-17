@@ -11,4 +11,4 @@ export const Input = styled(FormInput)`
 
 	border-radius: 5px;
 	border: 1px solid ${({ theme }) => theme.colors.black};
-`;
+`

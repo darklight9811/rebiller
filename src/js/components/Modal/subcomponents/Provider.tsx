@@ -1,17 +1,17 @@
 // Packages
-import React from "react";
+import React from "react"
 
 // Interfaces
-import { ProviderProps } from "../types";
+import { ProviderProps } from "../types"
 
 // Contexts
-import ModalContext from "./context";
+import ModalContext from "./context"
 
 // Styles
 import * as styled from "../styled"
 
 // Services
-import ModalService from "../../../models/modal";
+import ModalService from "services/modal"
 
 const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 	// -------------------------------------------------
@@ -19,10 +19,10 @@ const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 	// -------------------------------------------------
 
 	// refs
-	const container = React.useRef<HTMLDivElement>();
+	const container = React.useRef<HTMLDivElement>()
 
 	// models
-	const [ data, dispatch ] = ModalService.useModel();
+	const [ data, dispatch ] = ModalService.useModel()
 
 	// -------------------------------------------------
 	// Render
@@ -45,7 +45,7 @@ const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 				ref={container as any}
 			/>
 		</ModalContext.Provider>
-	);
-};
+	)
+}
 
-export default Provider;
+export default Provider

@@ -1,12 +1,12 @@
-import List from "../../components/List";
-import billService from "../../models/config"
+import List from "components/List"
+import billService from "services/bill"
 
 export default function BillList () {
 	// -------------------------------------------------
 	// Properties
 	// -------------------------------------------------
 
-	const [{list}] = billService.useModel();
+	const [{list}] = billService.useModel()
 
 	// -------------------------------------------------
 	// Render

@@ -1,16 +1,16 @@
 // Packages
-import { render } from 'preact'
-import { Provider } from "react-redux";
+import { render } from "preact"
+import { Provider } from "react-redux"
 
 // Store
-import { store } from './js/models';
+import { store } from "services"
 
 // Containers
-import App from './js/containers/App';
+import App from "containers/App"
 
 // Components
-import ThemeProvider from "./js/components/ThemeProvider"
-import Modal from './js/components/Modal';
+import ThemeProvider from "components/ThemeProvider"
+import Modal from "components/Modal"
 
 // -------------------------------------------------
 // Styling
@@ -31,5 +31,5 @@ render(
 			</Modal.Provider>
 		</ThemeProvider>
 	</Provider>,
-	document.getElementById('app')!
-);
+	document.getElementById("app")!,
+)

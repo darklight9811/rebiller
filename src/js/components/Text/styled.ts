@@ -13,4 +13,4 @@ export const Text = styled(FormText)`
 
 	border-radius: 5px;
 	border: 1px solid ${({ theme }) => theme.colors.black};
-`;
+`

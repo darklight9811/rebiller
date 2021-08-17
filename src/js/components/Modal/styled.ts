@@ -21,7 +21,7 @@ export const Container = styled.div`
 	opacity: ${({ open }) => open ? 1:0};
 	transition: opacity .2s ease;
 	${({ open }) => open ? "":"pointer-events: none"};
-`;
+`
 
 // -------------------------------------------------
 // Background
@@ -37,7 +37,7 @@ export const Background = styled.div`
 	left: 0;
 	
 	background-color: rgba(0,0,0, 0.8);
-`;
+`
 
 // -------------------------------------------------
 // Modal
@@ -106,8 +106,8 @@ export const Button = styled.button`
 
 	position: absolute;
 
-	right: 20px;
-	top: 20px;
+	right: 40px;
+	top: 30px;
 	font-size: 20px;
 
 	&:hover svg {
@@ -138,8 +138,8 @@ export const Title = styled.h2`
 	line-height: 1.28571429em;
 	font-size: 1.5rem;
 
-	margin-bottom: 0;
-`;
+	margin: 0;
+`
 
 // -------------------------------------------------
 // Subtitle
@@ -151,4 +151,12 @@ export const Subtitle = styled.h3`
 	font-size: 1rem;
 
 	margin-bottom: 0;
-`;
+`
+
+// -------------------------------------------------
+// Body
+// -------------------------------------------------
+
+export const Body = styled.div`
+	margin-top: 20px;
+`

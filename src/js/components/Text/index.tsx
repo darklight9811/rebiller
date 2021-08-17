@@ -4,7 +4,9 @@ import { Error } from "formalization"
 // Component
 import Props from "./props"
 import * as styled from "./styled"
-import * as form from "../../../style/layout/form"
+
+// Layout
+import * as form from "layout/form"
 
 export default function Text (props: Props) {
 	// -------------------------------------------------

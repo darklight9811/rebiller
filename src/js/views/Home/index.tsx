@@ -1,14 +1,14 @@
 // Services
-import configService from "../../models/bill"
+import configService from "services/config"
 
 // Containers
-import BillList from "../../containers/BillList"
+import BillList from "containers/BillList"
 
 // Components
-import Button from "../../components/Button"
-import Modal from "../../components/Modal"
-import modalService from "../../models/modal"
-import BillAdd from "../../containers/BillAdd"
+import Button from "components/Button"
+import Modal from "components/Modal"
+import modalService from "services/modal"
+import BillAdd from "containers/BillAdd"
 
 export default function Home () {
 	// -------------------------------------------------
@@ -32,9 +32,9 @@ export default function Home () {
 
 			<BillList />
 
-			{/* <Modal id="hi" title="Add new bill"> */}
+			<Modal id="hi" title="Add new bill">
 				<BillAdd />
-			{/* </Modal> */}
+			</Modal>
 		</>
 	)
 }

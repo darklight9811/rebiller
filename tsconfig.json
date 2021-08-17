@@ -16,7 +16,12 @@
     "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
-	"experimentalDecorators": true
+	"experimentalDecorators": true,
+	"baseUrl": "src",
+	"paths": {
+		"layout/*": ["./style/layout/*"],
+		"*": ["./js/*"]
+	}
   },
   "include": ["src"]
 }

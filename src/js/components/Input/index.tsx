@@ -1,15 +1,15 @@
 // Packages
-import { Error } from "formalization";
+import { Error } from "formalization"
 
 // Component
 import Props from "./props"
 import * as styled from "./styled"
 
 // Style
-import * as form from "../../../style/layout/form"
+import * as form from "layout/form"
 
 // Data
-import validations from "../../utils/data/validations";
+import validations from "utils/data/validations"
 
 export default function Input (props: Props) {
 	// -------------------------------------------------

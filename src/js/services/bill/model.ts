@@ -1,6 +1,5 @@
 // Packages
-import * as faker from "faker";
-import { createModel } from "@rematch/core";
+import { createModel } from "@rematch/core"
 
 // Model
 import ModelInterface from "./interface"
@@ -33,7 +32,7 @@ const ConfigModel = createModel()({
 			return {
 				...state,
 				list: {
-					data: [... state.list.data, data]
+					data: [... state.list.data, data],
 				},
 			}
 		},
@@ -41,11 +40,11 @@ const ConfigModel = createModel()({
 			return {
 				...state,
 				list: {
-					data
+					data,
 				},
 			}
 		},
-	}
-});
+	},
+})
 
-export default ConfigModel;
+export default ConfigModel

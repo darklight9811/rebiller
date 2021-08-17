@@ -1,14 +1,17 @@
 // Packages
-import { createModel } from "@rematch/core";
+import { createModel } from "@rematch/core"
 
-const auth = createModel()({
+const ConfigModel = createModel()({
+
 	// -------------------------------------------------
-	// States
+	// State
 	// -------------------------------------------------
 
 	state: {
-		open: false,
-		display: undefined as string | undefined,
+		language: "en-EN",
+		user: {
+			name: "Rafael Corrêa Chaves",
+		},
 	},
 
 	// -------------------------------------------------
@@ -16,20 +19,13 @@ const auth = createModel()({
 	// -------------------------------------------------
 
 	reducers: {
-		onOpen(state, id: string) {
+		setLanguage (state, language: string) {
 			return {
 				...state,
-				open: true,
-				display: id,
-			};
-		},
-		onClose(state) {
-			return {
-				...state,
-				open: false,
+				language,
 			}
 		},
 	},
-});
+})
 
-export default auth;
+export default ConfigModel

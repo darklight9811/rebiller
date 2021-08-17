@@ -1,11 +1,11 @@
 // Packages
-import { createPortal, useContext, useEffect, useMemo } from "preact/compat";
+import { createPortal, useContext, useEffect, useMemo } from "preact/compat"
 
 // Contexts
-import modalContext from "./context";
+import modalContext from "./context"
 
 // Component
-import Props from "../types";
+import Props from "../types"
 
 // Styles
 import * as styled from "../styled"
@@ -16,15 +16,15 @@ const ModalMain: unknown = (props: Props) => {
 	// -------------------------------------------------
 
 	// contexts
-	const { element, display, close, open } = useContext(modalContext);
+	const { element, display, close, open } = useContext(modalContext)
 
 	// -------------------------------------------------
 	// Effects
 	// -------------------------------------------------
 
 	useEffect(() => {
-		if (props.startOpen) open(props.id);
-	}, [props.startOpen, props.id, open]);
+		if (props.startOpen) open(props.id)
+	}, [props.startOpen, props.id, open])
 
 	// -------------------------------------------------
 	// Memos
@@ -32,7 +32,7 @@ const ModalMain: unknown = (props: Props) => {
 
 	const isCloseable = useMemo(() => props.closeable === undefined || props.closeable, [
 		props.closeable,
-	]);
+	])
 
 	// -------------------------------------------------
 	// Render
@@ -49,31 +49,29 @@ const ModalMain: unknown = (props: Props) => {
 					onClick={() => isCloseable && close()}
 				/>
 				<styled.Modal style={{ maxWidth: props.width }}	key={props.id}>
-					<div>
+					<div class="d-flex">
 						{props.title && <styled.Title>{props.title}</styled.Title>}
 						{
 							props.subtitle &&
 							<styled.Subtitle>{props.subtitle}</styled.Subtitle>
 						}
 
-						<div>
-							{isCloseable && (
-								<styled.Button type="button" onClick={() => close()}>
-									<i class="fa fa-times" />
-								</styled.Button>
-							)}
-						</div>
+						{isCloseable && (
+							<styled.Button type="button" onClick={() => close()}>
+								<i class="fa fa-times" />
+							</styled.Button>
+						)}
 					</div>
 
-					<div>
+					<styled.Body>
 						{props.children}
-					</div>
+					</styled.Body>
 				</styled.Modal>
 			</>
-		), element);
+		), element)
 	}
 
-	return null;
-};
+	return null
+}
 
-export default ModalMain as React.FC<Props>;
+export default ModalMain as React.FC<Props>

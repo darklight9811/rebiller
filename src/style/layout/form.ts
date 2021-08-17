@@ -7,7 +7,7 @@ import styled from "styled-components"
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-`;
+`
 
 // -------------------------------------------------
 // Error
@@ -20,4 +20,4 @@ export const Error = styled.span`
 
 	height: 20px;
 	margin: -4px 0 5px;
-`;
+`
