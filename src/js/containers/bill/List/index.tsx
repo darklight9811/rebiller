@@ -1,12 +1,18 @@
+// Components
 import List from "components/List"
+
+// Services
 import billService from "services/bill"
 
-export default function BillList () {
+// Subcomponents
+import BillItem from "./subcomponents/BillItem"
+
+export default function BillList() {
 	// -------------------------------------------------
 	// Properties
 	// -------------------------------------------------
 
-	const [{list}] = billService.useModel()
+	const [{ list }] = billService.useModel()
 
 	// -------------------------------------------------
 	// Render
@@ -14,7 +20,7 @@ export default function BillList () {
 
 	return (
 		<List>
-			{list.data.map(item => <List.Item>{item.label}</List.Item>)}
+			{list.data.map(item => <BillItem key={item.id} {...item} />)}
 		</List>
 	)
 }

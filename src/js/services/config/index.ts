@@ -1,11 +1,11 @@
 // Store
-import { store, ModelsInterface } from ".."
+import { store } from ".."
 
 // Utils
 import Service from "../../utils/service"
 
 @Service.store(store, "config")
-class ConfigServiceClass extends Service <ModelsInterface, "config"> {
+class ConfigServiceClass extends Service <"config"> {
 
 }
 

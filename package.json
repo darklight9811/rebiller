@@ -8,21 +8,29 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
+		"@acai/router": "^2.1.0",
 		"@fortawesome/fontawesome-free": "^5.15.4",
 		"@rematch/core": "^2.1.0",
+		"@rematch/persist": "^2.1.0",
 		"axios": "^0.21.1",
 		"bootstrap": "^5.1.0",
 		"formalization": "^1.4.25",
 		"preact": "^10.5.13",
 		"react-redux": "^7.2.4",
+		"react-router": "^5.2.0",
+		"react-router-dom": "^5.2.0",
 		"redux": "^4.1.1",
+		"redux-persist": "^6.0.0",
 		"sass": "^1.37.5",
-		"styled-components": "^5.3.0"
+		"styled-components": "^5.3.0",
+		"vanilla-masker": "^1.2.0"
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.0.0",
 		"@types/faker": "^5.5.8",
+		"@types/react-router-dom": "^5.1.8",
 		"@types/styled-components": "^5.1.12",
+		"@types/vanilla-masker": "^1.2.1",
 		"@typescript-eslint/eslint-plugin": "^4.29.2",
 		"@typescript-eslint/parser": "^4.29.2",
 		"eslint": "^7.32.0",

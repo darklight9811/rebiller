@@ -1,7 +1,10 @@
+// Data
+import masks from "utils/data/masks"
+
 export default interface PropsInterface {
 	name: string;
 	label?: string;
 	required?: boolean;
 	placeholder?: string;
-	type?: "string" | "number" | "date";
+	type?: keyof typeof masks;
 }

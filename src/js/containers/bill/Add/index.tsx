@@ -9,17 +9,17 @@ import Text from "components/Text"
 // Services
 import billService from "services/bill"
 
-export default function BillAdd () {
+export default function BillAdd() {
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
 	return (
-		<Form onSubmit={(data) => billService.add(data as any)}>
+		<Form onSubmit={billService.add}>
 			<Input name="label" label="Name" required placeholder="ex: Internet bill" />
-			<Input name="date_expire" label="Date it expires" required type="date" />
-			<Input name="fine_percentage" label="Fine percentage per day" required type="number" />
-			<Input name="base_value" label="Bill price" required type="number" />
+			<Input name="date_expire" label="Day it expires" required type="number" />
+			<Input name="fine_percentage" label="Fine percentage per day" required type="money" />
+			<Input name="base_value" label="Bill price" required type="money" />
 			<Text name="description" label="Description" />
 
 			<Button>Add</Button>

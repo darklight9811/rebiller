@@ -4,27 +4,28 @@
 import { useDispatch, useSelector } from "react-redux"
 
 // Interfaces
-import { Models, RematchRootState, RematchDispatch } from "@rematch/core"
+import { RematchRootState, RematchDispatch } from "@rematch/core"
 
 // Utils
 import { instance } from "../../client"
 
 // Decorators
 import StoreDecorator from "./decorator"
+import { ModelsInterface } from "services"
 
-type StoreGeneric<ModelGroup extends Models, ModelName extends string> = {
+type StoreGeneric<ModelName extends string> = {
 	store: [
-		RematchRootState<ModelGroup>,
-		RematchDispatch<ModelGroup>,
+		RematchRootState<ModelsInterface>,
+		RematchDispatch<ModelsInterface>,
 	];
 
 	model: [
-		RematchRootState<ModelGroup>[ModelName],
-		RematchDispatch<ModelGroup>[ModelName],
+		RematchRootState<ModelsInterface>[ModelName],
+		RematchDispatch<ModelsInterface>[ModelName],
 	];
 };
 
-export default abstract class Service<ModelGroup extends Models, ModelName extends string> {
+export default abstract class Service<ModelName extends string> {
 	// -------------------------------------------------
 	// Properties
 	// -------------------------------------------------
@@ -38,10 +39,10 @@ export default abstract class Service<ModelGroup extends Models, ModelName exten
 	public useModel () {
 		const model = (this.constructor as any).$model
 
-		const state 	= useSelector((store: RematchRootState<ModelGroup>) => store[model as string])
+		const state 	= useSelector((store: RematchRootState<ModelsInterface>) => store[model as string])
 		const dispatch	= useDispatch()
 
-		return [state, dispatch[model as string]] as StoreGeneric<ModelGroup, ModelName>["model"]
+		return [state, dispatch[model as string]] as StoreGeneric<ModelName>["model"]
 	}
 
 	// -------------------------------------------------
@@ -64,7 +65,7 @@ export default abstract class Service<ModelGroup extends Models, ModelName exten
 		return [
 			storeInstance.getState(),
 			storeInstance.dispatch,
-		] as StoreGeneric<ModelGroup, ModelName>["store"]
+		] as StoreGeneric<ModelName>["store"]
 	}
 
 	protected get model () {
@@ -79,6 +80,6 @@ export default abstract class Service<ModelGroup extends Models, ModelName exten
 		return [
 			state[model as any],
 			dispatch[model as any],
-		] as StoreGeneric<ModelGroup, ModelName>["model"]
+		] as StoreGeneric<ModelName>["model"]
 	}
 }

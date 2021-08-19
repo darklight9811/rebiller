@@ -1,6 +1,6 @@
-import { RematchStore } from "@rematch/core"
+import { StoreInterface } from "services"
 
 export interface ServiceInterface {
-	$store	: RematchStore;
+	$store	: StoreInterface;
 	$model?	: string;
 }

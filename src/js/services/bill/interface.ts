@@ -1,8 +1,9 @@
 export default interface BillInterface {
 	id: string;
 	label: string;
-	date_expire: string;
-	fine_percentage: number;
-	base_value: number;
+	date_expire: number;
+	fine_percentage: string;
+	base_value: string;
 	description: string;
+	date_created: number;
 }

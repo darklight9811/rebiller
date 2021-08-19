@@ -28,7 +28,15 @@ const ConfigModel = createModel()({
 				data,
 			}
 		},
-		addList (state, data: ModelInterface) {
+		setList (state, data: ModelInterface[]) {
+			return {
+				...state,
+				list: {
+					data,
+				},
+			}
+		},
+		addListItem (state, data: ModelInterface) {
 			return {
 				...state,
 				list: {
@@ -36,11 +44,19 @@ const ConfigModel = createModel()({
 				},
 			}
 		},
-		setList (state, data: ModelInterface[]) {
+		editListItem (state, data: {id: string; data: Partial<ModelInterface>}) {
 			return {
 				...state,
 				list: {
-					data,
+					data: state.list.data.map(item => item.id === data.id ? {...item, ...data.data} : item),
+				},
+			}
+		},
+		removeListItem (state, id: string) {
+			return {
+				...state,
+				list: {
+					data: state.list.data.filter(item => item.id !== id),
 				},
 			}
 		},

@@ -48,13 +48,15 @@ const ModalMain: unknown = (props: Props) => {
 					onKeyPress={() => true}
 					onClick={() => isCloseable && close()}
 				/>
-				<styled.Modal style={{ maxWidth: props.width }}	key={props.id}>
+				<styled.Modal style={{ maxWidth: props.width }} key={props.id}>
 					<div class="d-flex">
-						{props.title && <styled.Title>{props.title}</styled.Title>}
-						{
-							props.subtitle &&
-							<styled.Subtitle>{props.subtitle}</styled.Subtitle>
-						}
+						<div>
+							{props.title && <styled.Title>{props.title}</styled.Title>}
+							{
+								props.subtitle &&
+								<styled.Subtitle>{props.subtitle}</styled.Subtitle>
+							}
+						</div>
 
 						{isCloseable && (
 							<styled.Button type="button" onClick={() => close()}>
